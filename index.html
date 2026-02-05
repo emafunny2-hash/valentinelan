@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine for Lan 💖</title>
+
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #ffe6ee;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+  }
+
+  h1 {
+    color: #ff4d6d;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  img {
+    width: 95%;
+    max-width: 360px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    border: none;
+    padding: 14px 30px;
+    font-size: 20px;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+
+  #yesBtn {
+    background: #ff4d6d;
+    color: white;
+    margin-right: 10px;
+  }
+
+  #noBtn {
+    background: #aaa;
+    color: white;
+    position: absolute;
+    top: 70%;
+    left: 55%;
+    touch-action: none;
+  }
+
+  #secondScreen {
+    display: none;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- FIRST SCREEN -->
+<div class="container" id="firstScreen">
+  <h1>✨🌸💖 Lan, will you be my Valentine? 💖🌸✨</h1>
+
+  <img src="image2.jpeg" alt="First image">
+
+  <br>
+
+  <button id="yesBtn" onclick="showLove()">YES 💖</button>
+  <button id="noBtn">NO 🙈</button>
+</div>
+
+<!-- SECOND SCREEN -->
+<div class="container" id="secondScreen">
+  <h1>Yayyy Lan 💕✨</h1>
+
+  <img src="image1.jpeg" alt="Second image">
+
+  <h2>You made my heart smile 💖</h2>
+</div>
+
+<script>
+  const noBtn = document.getElementById("noBtn");
+
+  function moveNo() {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 120);
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  }
+
+  // Move when hovered or touched
+  noBtn.addEventListener("mouseover", moveNo);
+  noBtn.addEventListener("touchstart", moveNo);
+
+  // 🔥 Keep moving continuously
+  setInterval(moveNo, 700);
+
+  function showLove() {
+    document.getElementById("firstScreen").style.display = "none";
+    document.getElementById("secondScreen").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
